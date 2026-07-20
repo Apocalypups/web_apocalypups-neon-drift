@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Apocalypups: Neon Drift — a rhythm beat-em-up where every punch lands on the beat." />
+  <title>APOCALYPUPS — Neon Drift</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:wght@400;500;600;700&family=Oxanium:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="fx-canvas" aria-hidden="true"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="logo-mark" href="#top" aria-label="Apocalypups home">
+      <span class="logo-mark__glyph">A</span>
+      <span class="logo-mark__text">Apocalypups</span>
+    </a>
+    <nav class="topnav" aria-label="Primary">
+      <a href="#combat">Combat</a>
+      <a href="#rhythm">Rhythm</a>
+      <a href="#showtime">Showtime</a>
+      <a href="#cast">Cast</a>
+    </nav>
+    <a class="btn btn--ghost" href="#wish">Wishlist</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__sky" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+
+      <div class="hero__copy">
+        <p class="eyebrow">Prototype · Neon Drift</p>
+        <h1 class="brand">
+          <span class="brand__line brand__line--glitch" data-text="APOCALYPUPS">APOCALYPUPS</span>
+        </h1>
+        <p class="hero__lede">
+          A street-level rhythm brawler. Read the beat. Break the scavengers. Drop into Showtime.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#wish">Get on the list</a>
+          <a class="btn btn--ghost" href="#combat">See the fight</a>
+        </div>
+      </div>
+
+      <figure class="hero__stage">
+        <img
+          class="hero__fighter hero__fighter--slayer"
+          src="assets/art/slayer_kick_12.png"
+          alt="Slayer mid roundhouse kick"
+          width="560"
+          height="536"
+        />
+        <img
+          class="hero__fighter hero__fighter--scav"
+          src="assets/art/scavenger_dance_05.png"
+          alt="Scavenger in dance taunt"
+          width="400"
+          height="560"
+        />
+        <div class="hero__ground-glow" aria-hidden="true"></div>
+      </figure>
+
+      <div class="hero__bpm" aria-hidden="true">
+        <span class="hero__bpm-dot"></span>
+        <span>128 BPM</span>
+      </div>
+    </section>
+
+    <section class="band" id="combat">
+      <div class="band__inner">
+        <header class="section-head">
+          <h2>Close-range violence, timed like music.</h2>
+          <p>Boxer-step in. Dash-kick through. Chain punches on Perfect windows until the street goes quiet.</p>
+        </header>
+
+        <div class="feature-strip">
+          <article class="feature">
+            <div class="feature__art">
+              <img src="assets/art/slayer_punch_10.png" alt="Slayer punch impact pose" />
+            </div>
+            <h3>Boxer Step</h3>
+            <p>Micro-dashes that read like footwork — forward burst, retreat guard, dust on the asphalt.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__art feature__art--wide">
+              <img src="assets/art/slayer_dash_03.png" alt="Slayer dash kick" />
+            </div>
+            <h3>Dash Impact</h3>
+            <p>Commit through the lane. Hit detection rides the animation — miss the timing and you eat the counter.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__art">
+              <img src="assets/art/scavenger_kick_08.png" alt="Scavenger spin kick" />
+            </div>
+            <h3>Enemy Pressure</h3>
+            <p>Scavengers engage with taunt locks, zone AI, and weighted attack mixes. They dance before they kill.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rhythm" id="rhythm">
+      <div class="rhythm__inner">
+        <header class="section-head section-head--invert">
+          <h2>The Conductor runs the night.</h2>
+          <p>Every encounter is wired to a live BPM clock. Hits grade on the grid. Combos breathe with the track.</p>
+        </header>
+
+        <div class="conductor">
+          <div class="conductor__rail" aria-hidden="true">
+            <span class="conductor__beat"></span>
+            <span class="conductor__beat"></span>
+            <span class="conductor__beat conductor__beat--accent"></span>
+            <span class="conductor__beat"></span>
+            <span class="conductor__beat"></span>
+            <span class="conductor__beat"></span>
+            <span class="conductor__beat conductor__beat--accent"></span>
+            <span class="conductor__beat"></span>
+          </div>
+          <ul class="conductor__stats">
+            <li><strong>Perfect</strong><span>Center of the window</span></li>
+            <li><strong>Good</strong><span>Still in the pocket</span></li>
+            <li><strong>Miss</strong><span>Lockout. Reset the chain.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="showtime" id="showtime">
+      <div class="showtime__inner">
+        <p class="eyebrow">Signature system</p>
+        <h2 class="showtime__title">SHOWTIME</h2>
+        <p class="showtime__copy">
+          Charge the meter on clean hits. Flip the world into Halftime slow-mo and neon zoom —
+          then unload the bar before the scavengers remember how to block.
+        </p>
+        <div class="meter" role="img" aria-label="Showtime charge meter illustration">
+          <div class="meter__track">
+            <div class="meter__fill"></div>
+          </div>
+          <div class="meter__label">CHARGE · DROP · DESTROY</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cast" id="cast">
+      <div class="cast__inner">
+        <header class="section-head">
+          <h2>Street cast.</h2>
+          <p>Hand-drawn spritesheets. Frame-perfect combat. Neon silhouettes against a dying city.</p>
+        </header>
+
+        <div class="roster">
+          <article class="roster__card roster__card--slayer">
+            <img src="assets/art/slayer_kick_06.png" alt="Slayer ready stance" />
+            <div>
+              <h3>Slayer</h3>
+              <p>Lead fist of the crew. Dash, kick, and hold the center of every encounter lane.</p>
+            </div>
+          </article>
+          <article class="roster__card roster__card--scav">
+            <img src="assets/art/scavenger_idle_00.png" alt="Scavenger battle stance" />
+            <div>
+              <h3>Scavenger</h3>
+              <p>Taunt-first street trash. Spin kicks, punch lunges, and dance-offs before the blood starts.</p>
+            </div>
+          </article>
+          <article class="roster__card roster__card--pups">
+            <img src="assets/art/scavenger_dance_08.png" alt="Taunt silhouette" />
+            <div>
+              <h3>The Pups</h3>
+              <p>Swap tools mid-combo. Fang, Slash, Bruce — each pup rewires how the beat feels.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wish" id="wish">
+      <div class="wish__inner">
+        <h2>Neon Drift is in prototype.</h2>
+        <p>Build nights. Checkpoint branches. Scavenger AI that still gets too cocky. Join early and shape the fight.</p>
+        <form class="wish__form" id="wish-form">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@night.city" required autocomplete="email" />
+          <button class="btn btn--primary" type="submit">Notify me</button>
+        </form>
+        <p class="wish__note" id="wish-note" hidden>You’re on the list. Keep an ear on the BPM.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">APOCALYPUPS</div>
+    <p>Neon Drift · Rhythm beat-em-up prototype</p>
+    <p class="footer__meta">Built for the fight. Tuned for the beat.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
