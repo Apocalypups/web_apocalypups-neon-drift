@@ -1,27 +1,28 @@
-# Apocalypups — Neon Drift (Website)
+# Apocalypups — Rhythm & Rage (Website)
 
-Marketing site for the **Apocalypups: Neon Drift** rhythm beat-em-up prototype.
+Marketing site for **Apocalypups: Rhythm & Rage**, with **Neon Drift** as the opening world.
 
-## Stack
+## Art
 
-- Static HTML / CSS / JS (no build step)
-- Character art extracted from the Unity prototype spritesheets
-- Canvas rain + 128 BPM beat-synced hero animation
+All key art lives in `assets/art/`:
 
-## Run locally
+| File | Use |
+|---|---|
+| `cover_front.*` | Hero full-bleed (cropped from packshot) |
+| `Apocalypups_RhythmAndRage_CoverOnePager.*` | Full packaging showcase |
+| `neon_city_sign.*` | Neon Drift world |
+| `slayer.*` / `fang.*` / `bruce.*` / `slash.*` | Crew portraits |
+| `scavenger.*` | Enemy section |
 
-Open `index.html` in a browser, or serve the folder:
+Prefer `.avif` with `.webp` fallback via `<picture>`.
+
+## Run
 
 ```bash
-npx serve .
-# or
-python3 -m http.server 8080
+python3 -m http.server 8765
+# → http://localhost:8765
 ```
 
 ## Wishlist
 
-The email form stores addresses in `localStorage` only (`nd_wish`). Hook it to a real backend when ready.
-
-## License
-
-Game art © Apocalypups. Site code for the Neon Drift prototype marketing page.
+Emails are stored in `localStorage` (`nd_wish`) only.

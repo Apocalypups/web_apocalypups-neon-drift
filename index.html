@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Apocalypups: Neon Drift — a rhythm beat-em-up where every punch lands on the beat." />
-  <title>APOCALYPUPS — Neon Drift</title>
+  <meta name="description" content="Apocalypups: Rhythm &amp; Rage — beat-synced brawling across Neon Drift and beyond." />
+  <title>APOCALYPUPS — Rhythm &amp; Rage</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,175 +22,588 @@
       <span class="logo-mark__text">Apocalypups</span>
     </a>
     <nav class="topnav" aria-label="Primary">
-      <a href="#combat">Combat</a>
-      <a href="#rhythm">Rhythm</a>
-      <a href="#showtime">Showtime</a>
-      <a href="#cast">Cast</a>
+      <a href="#trailer">Trailer</a>
+      <a href="#crew">Crew</a>
+      <a href="#levels">Levels</a>
+      <a href="#gameplay">Gameplay</a>
+      <a href="#bosses">Bosses</a>
     </nav>
-    <a class="btn btn--ghost" href="#wish">Wishlist</a>
+    <a class="btn btn--primary btn--sm" href="#wish">Wishlist</a>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="hero__sky" aria-hidden="true"></div>
-      <div class="hero__grid" aria-hidden="true"></div>
-      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__slide is-active">
+          <picture>
+            <source srcset="assets/art/shot_01.avif" type="image/avif" />
+            <img src="assets/art/shot_01.webp" alt="" width="3143" height="1758" fetchpriority="high" />
+          </picture>
+        </div>
+        <div class="hero__slide">
+          <picture>
+            <source srcset="assets/art/shot_03.avif" type="image/avif" />
+            <img src="assets/art/shot_03.webp" alt="" width="3150" height="1762" loading="lazy" />
+          </picture>
+        </div>
+        <div class="hero__slide">
+          <picture>
+            <source srcset="assets/art/shot_05.avif" type="image/avif" />
+            <img src="assets/art/shot_05.webp" alt="" width="3149" height="1765" loading="lazy" />
+          </picture>
+        </div>
+        <div class="hero__slide">
+          <picture>
+            <source srcset="assets/art/shot_02.avif" type="image/avif" />
+            <img src="assets/art/shot_02.webp" alt="" width="3148" height="1759" loading="lazy" />
+          </picture>
+        </div>
+        <div class="hero__slide">
+          <picture>
+            <source srcset="assets/art/shot_04.avif" type="image/avif" />
+            <img src="assets/art/shot_04.webp" alt="" width="3153" height="1763" loading="lazy" />
+          </picture>
+        </div>
+      </div>
 
-      <div class="hero__copy">
-        <p class="eyebrow">Prototype · Neon Drift</p>
-        <h1 class="brand">
-          <span class="brand__line brand__line--glitch" data-text="APOCALYPUPS">APOCALYPUPS</span>
-        </h1>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__grain" aria-hidden="true"></div>
+      <div class="hero__tear" aria-hidden="true"></div>
+
+      <div class="hero__judgments" aria-hidden="true">
+        <span class="judge judge--perfect" style="--x: 14%; --y: 20%; --r: -12deg; --d: 0s">PERFECT</span>
+        <span class="judge judge--ok" style="--x: 78%; --y: 24%; --r: 8deg; --d: 2.4s">OK</span>
+        <span class="judge judge--miss" style="--x: 62%; --y: 70%; --r: -6deg; --d: 4.8s">MISS</span>
+        <span class="judge judge--combo" style="--x: 82%; --y: 48%; --r: 5deg; --d: 1.2s">10 × COMBO</span>
+        <span class="judge judge--showtime" style="--x: 16%; --y: 64%; --r: -9deg; --d: 3.6s">SHOWTIME</span>
+      </div>
+
+      <h1 class="hero__mega" aria-label="APOCALYPUPS">
+        <span class="hero__mega-text" aria-hidden="true">
+          <span class="mega-letter" style="--i: 0">A</span><span class="mega-letter" style="--i: 1">P</span><span class="mega-letter" style="--i: 2">O</span><span class="mega-letter" style="--i: 3">C</span><span class="mega-letter" style="--i: 4">A</span><span class="mega-letter" style="--i: 5">L</span><span class="mega-letter" style="--i: 6">Y</span><span class="mega-letter" style="--i: 7">P</span><span class="mega-letter" style="--i: 8">U</span><span class="mega-letter" style="--i: 9">P</span><span class="mega-letter" style="--i: 10">S</span>
+        </span>
+      </h1>
+
+      <div class="hero__content">
+        <p class="eyebrow eyebrow--torn">
+          <span class="eyebrow__live"></span>
+          Coming soon · PuppyStation
+        </p>
+        <p class="brand__sub">Rhythm &amp; Rage</p>
         <p class="hero__lede">
-          A street-level rhythm brawler. Read the beat. Break the scavengers. Drop into Showtime.
+          Swap pups mid-combo. Land Perfects on the grid. Tear through Neon Drift before Queen Rakka takes the mic.
         </p>
         <div class="hero__cta">
-          <a class="btn btn--primary" href="#wish">Get on the list</a>
-          <a class="btn btn--ghost" href="#combat">See the fight</a>
+          <a class="btn btn--primary btn--pulse btn--jagged" href="#wish">Add to wishlist</a>
+          <a class="btn btn--ghost btn--jagged" href="#trailer">Watch trailer</a>
         </div>
       </div>
 
-      <figure class="hero__stage">
-        <img
-          class="hero__fighter hero__fighter--slayer"
-          src="assets/art/slayer_kick_12.png"
-          alt="Slayer mid roundhouse kick"
-          width="560"
-          height="536"
-        />
-        <img
-          class="hero__fighter hero__fighter--scav"
-          src="assets/art/scavenger_dance_05.png"
-          alt="Scavenger in dance taunt"
-          width="400"
-          height="560"
-        />
-        <div class="hero__ground-glow" aria-hidden="true"></div>
-      </figure>
-
-      <div class="hero__bpm" aria-hidden="true">
-        <span class="hero__bpm-dot"></span>
-        <span>128 BPM</span>
+      <div class="hero__footer">
+        <div class="hero__dots" role="tablist" aria-label="Hero screenshots"></div>
+        <div class="hero__bpm" aria-hidden="true">
+          <span class="hero__bpm-bar"><i></i><i></i><i></i><i></i></span>
+          <span>128 BPM</span>
+        </div>
       </div>
     </section>
 
-    <section class="band" id="combat">
-      <div class="band__inner">
-        <header class="section-head">
-          <h2>Close-range violence, timed like music.</h2>
-          <p>Boxer-step in. Dash-kick through. Chain punches on Perfect windows until the street goes quiet.</p>
+    <section class="trailer" id="trailer">
+      <div class="trailer__inner">
+        <header class="section-head section-head--center">
+          <p class="eyebrow">Official trailer</p>
+          <h2>Hit the downbeat.</h2>
+          <p>Rhythm &amp; Rage in motion — pups, Perfects, and the road to Queen Rakka.</p>
         </header>
 
-        <div class="feature-strip">
-          <article class="feature">
-            <div class="feature__art">
-              <img src="assets/art/slayer_punch_10.png" alt="Slayer punch impact pose" />
-            </div>
-            <h3>Boxer Step</h3>
-            <p>Micro-dashes that read like footwork — forward burst, retreat guard, dust on the asphalt.</p>
-          </article>
-          <article class="feature">
-            <div class="feature__art feature__art--wide">
-              <img src="assets/art/slayer_dash_03.png" alt="Slayer dash kick" />
-            </div>
-            <h3>Dash Impact</h3>
-            <p>Commit through the lane. Hit detection rides the animation — miss the timing and you eat the counter.</p>
-          </article>
-          <article class="feature">
-            <div class="feature__art">
-              <img src="assets/art/scavenger_kick_08.png" alt="Scavenger spin kick" />
-            </div>
-            <h3>Enemy Pressure</h3>
-            <p>Scavengers engage with taunt locks, zone AI, and weighted attack mixes. They dance before they kill.</p>
-          </article>
+        <div class="trailer__frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/ToPTns0la_o?rel=0"
+            title="Apocalypups Rhythm &amp; Rage — Official Trailer"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
-      </div>
-    </section>
 
-    <section class="rhythm" id="rhythm">
-      <div class="rhythm__inner">
-        <header class="section-head section-head--invert">
-          <h2>The Conductor runs the night.</h2>
-          <p>Every encounter is wired to a live BPM clock. Hits grade on the grid. Combos breathe with the track.</p>
-        </header>
-
-        <div class="conductor">
-          <div class="conductor__rail" aria-hidden="true">
-            <span class="conductor__beat"></span>
-            <span class="conductor__beat"></span>
-            <span class="conductor__beat conductor__beat--accent"></span>
-            <span class="conductor__beat"></span>
-            <span class="conductor__beat"></span>
-            <span class="conductor__beat"></span>
-            <span class="conductor__beat conductor__beat--accent"></span>
-            <span class="conductor__beat"></span>
-          </div>
-          <ul class="conductor__stats">
-            <li><strong>Perfect</strong><span>Center of the window</span></li>
-            <li><strong>Good</strong><span>Still in the pocket</span></li>
-            <li><strong>Miss</strong><span>Lockout. Reset the chain.</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="showtime" id="showtime">
-      <div class="showtime__inner">
-        <p class="eyebrow">Signature system</p>
-        <h2 class="showtime__title">SHOWTIME</h2>
-        <p class="showtime__copy">
-          Charge the meter on clean hits. Flip the world into Halftime slow-mo and neon zoom —
-          then unload the bar before the scavengers remember how to block.
+        <p class="trailer__link">
+          <a href="https://youtu.be/ToPTns0la_o" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
         </p>
-        <div class="meter" role="img" aria-label="Showtime charge meter illustration">
-          <div class="meter__track">
-            <div class="meter__fill"></div>
-          </div>
-          <div class="meter__label">CHARGE · DROP · DESTROY</div>
-        </div>
       </div>
     </section>
 
-    <section class="cast" id="cast">
-      <div class="cast__inner">
+    <section class="crew" id="crew">
+      <div class="crew__inner">
         <header class="section-head">
-          <h2>Street cast.</h2>
-          <p>Hand-drawn spritesheets. Frame-perfect combat. Neon silhouettes against a dying city.</p>
+          <h2>The crew.</h2>
+          <p>Four pups. Four weapons. One riot on the beat.</p>
         </header>
 
         <div class="roster">
-          <article class="roster__card roster__card--slayer">
-            <img src="assets/art/slayer_kick_06.png" alt="Slayer ready stance" />
-            <div>
+          <article class="member member--slayer">
+            <div class="member__art">
+              <picture>
+                <source srcset="assets/art/slayer.avif" type="image/avif" />
+                <img src="assets/art/slayer.webp" alt="Slayer — lead dog with chain mic" width="909" height="1432" loading="lazy" />
+              </picture>
+            </div>
+            <div class="member__meta">
               <h3>Slayer</h3>
-              <p>Lead fist of the crew. Dash, kick, and hold the center of every encounter lane.</p>
+              <p class="member__role">Lead Dog · Chain Mic</p>
+              <p>Center stage. Holds the lane, drops the mic, and keeps the combo honest.</p>
             </div>
           </article>
-          <article class="roster__card roster__card--scav">
-            <img src="assets/art/scavenger_idle_00.png" alt="Scavenger battle stance" />
-            <div>
-              <h3>Scavenger</h3>
-              <p>Taunt-first street trash. Spin kicks, punch lunges, and dance-offs before the blood starts.</p>
+
+          <article class="member member--fang">
+            <div class="member__art">
+              <picture>
+                <source srcset="assets/art/fang.avif" type="image/avif" />
+                <img src="assets/art/fang.webp" alt="Fang — stickstorm specialist" width="894" height="1395" loading="lazy" />
+              </picture>
+            </div>
+            <div class="member__meta">
+              <h3>Fang</h3>
+              <p class="member__role">Drums · Stickstorm</p>
+              <p>Dual sticks, camo grit, and pressure that never lets the scavengers breathe.</p>
             </div>
           </article>
-          <article class="roster__card roster__card--pups">
-            <img src="assets/art/scavenger_dance_08.png" alt="Taunt silhouette" />
-            <div>
-              <h3>The Pups</h3>
-              <p>Swap tools mid-combo. Fang, Slash, Bruce — each pup rewires how the beat feels.</p>
+
+          <article class="member member--bruce">
+            <div class="member__art">
+              <picture>
+                <source srcset="assets/art/bruce.avif" type="image/avif" />
+                <img src="assets/art/bruce.webp" alt="Bruce — bass powerhouse" width="879" height="1313" loading="lazy" />
+              </picture>
+            </div>
+            <div class="member__meta">
+              <h3>Bruce</h3>
+              <p class="member__role">Bass · Ground Quakes</p>
+              <p>Low-end bruiser. Spiked pauldron, heavier hits, streets that shake on the downbeat.</p>
+            </div>
+          </article>
+
+          <article class="member member--slash">
+            <div class="member__art">
+              <picture>
+                <source srcset="assets/art/slash.avif" type="image/avif" />
+                <img src="assets/art/slash.webp" alt="Slash — guitar chaos" width="865" height="1386" loading="lazy" />
+              </picture>
+            </div>
+            <div class="member__meta">
+              <h3>Slash</h3>
+              <p class="member__role">Guitar · Riffwave</p>
+              <p>Top hat, cigar, jagged riffs. Turns Perfect windows into light shows.</p>
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="levels" id="levels">
+      <div class="levels__inner">
+        <header class="section-head">
+          <p class="eyebrow">World map</p>
+          <h2>Eight stages. One tour.</h2>
+          <p>
+            From Neon Drift to the Realm of Queen Rakka — every stage flips the palette,
+            the pressure, and the boss that owns the encore.
+          </p>
+        </header>
+
+        <div class="level-grid">
+          <article class="level">
+            <figure class="level__art">
+              <picture>
+                <source srcset="assets/art/lvl_neon_drift.avif" type="image/avif" />
+                <img src="assets/art/lvl_neon_drift.webp" alt="Neon Drift level mockup" width="1536" height="1024" loading="lazy" />
+              </picture>
+            </figure>
+            <div class="level__meta">
+              <p class="level__num">01</p>
+              <h3>Neon Drift</h3>
+              <p>Cracked asphalt, pink moons, scavengers on the beat.</p>
+            </div>
+          </article>
+
+          <article class="level">
+            <figure class="level__art">
+              <picture>
+                <source srcset="assets/art/lvl_barkharbor_brawl.avif" type="image/avif" />
+                <img src="assets/art/lvl_barkharbor_brawl.webp" alt="Barkharbor Brawl level mockup" width="1536" height="1024" loading="lazy" />
+              </picture>
+            </figure>
+            <div class="level__meta">
+              <p class="level__num">02</p>
+              <h3>Barkharbor Brawl</h3>
+              <p>Dockside grit. Cranes, fog, and fists that smell like salt.</p>
+            </div>
+          </article>
+
+          <article class="level">
+            <figure class="level__art">
+              <picture>
+                <source srcset="assets/art/lvl_howlspire_woods.avif" type="image/avif" />
+                <img src="assets/art/lvl_howlspire_woods.webp" alt="Howlspire Woods level mockup" width="1536" height="1024" loading="lazy" />
+              </picture>
+            </figure>
+            <div class="level__meta">
+              <p class="level__num">03</p>
+              <h3>Howlspire Woods</h3>
+              <p>Trees that listen. Paths that loop. Something howls off-grid.</p>
+            </div>
+          </article>
+
+          <article class="level">
+            <figure class="level__art">
+              <picture>
+                <source srcset="assets/art/lvl_molten_mayhem.avif" type="image/avif" />
+                <img src="assets/art/lvl_molten_mayhem.webp" alt="Molten Mayhem level mockup" width="1536" height="1024" loading="lazy" />
+              </picture>
+            </figure>
+            <div class="level__meta">
+              <p class="level__num">04</p>
+              <h3>Molten Mayhem</h3>
+              <p>Furnace lanes. Cinderhound territory. Don’t miss the downbeat.</p>
+            </div>
+          </article>
+
+          <article class="level">
+            <figure class="level__art">
+              <picture>
+                <source srcset="assets/art/lvl_cathedral_of_static.avif" type="image/avif" />
+                <img src="assets/art/lvl_cathedral_of_static.webp" alt="Cathedral of Static level mockup" width="1536" height="1024" loading="lazy" />
+              </picture>
+            </figure>
+            <div class="level__meta">
+              <p class="level__num">05</p>
+              <h3>Cathedral of Static</h3>
+              <p>Bellkeeper Resonant. Wrong notes rewrite your combo.</p>
+            </div>
+          </article>
+
+          <article class="level">
+            <figure class="level__art">
+              <picture>
+                <source srcset="assets/art/lvl_carnival_carnage.avif" type="image/avif" />
+                <img src="assets/art/lvl_carnival_carnage.webp" alt="Carnival Carnage level mockup" width="1536" height="1024" loading="lazy" />
+              </picture>
+            </figure>
+            <div class="level__meta">
+              <p class="level__num">06</p>
+              <h3>Carnival Carnage</h3>
+              <p>Lights, mirrors, Mirrorball. The floor hits back.</p>
+            </div>
+          </article>
+
+          <article class="level">
+            <figure class="level__art">
+              <picture>
+                <source srcset="assets/art/lvl_Skyharmonia.avif" type="image/avif" />
+                <img src="assets/art/lvl_Skyharmonia.webp" alt="Skyharmonia level mockup" width="1280" height="853" loading="lazy" />
+              </picture>
+            </figure>
+            <div class="level__meta">
+              <p class="level__num">07</p>
+              <h3>Skyharmonia</h3>
+              <p>High air, clean chords — until the sky drops the chorus.</p>
+            </div>
+          </article>
+
+          <article class="level">
+            <figure class="level__art">
+              <picture>
+                <source srcset="assets/art/lvl_queen_rakkas_realm.avif" type="image/avif" />
+                <img src="assets/art/lvl_queen_rakkas_realm.webp" alt="Queen Rakka's Realm level mockup" width="1536" height="1024" loading="lazy" />
+              </picture>
+            </figure>
+            <div class="level__meta">
+              <p class="level__num">08</p>
+              <h3>Queen Rakka’s Realm</h3>
+              <p>Lightning. Crown. The encore that ends the tour.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="gameplay" id="gameplay">
+      <div class="gameplay__inner">
+        <header class="section-head">
+          <p class="eyebrow">How it plays</p>
+          <h2>Fight on the beat.</h2>
+          <p>
+            Apocalypups is a side-view rhythm brawler: every punch, dash, and pup-swap
+            lives on a live BPM clock. Miss the pocket and the combo dies.
+          </p>
+        </header>
+
+        <div class="gameplay__layout">
+          <div class="gp-carousel" data-gp-carousel>
+            <div class="gp-carousel__viewport">
+              <div class="gp-carousel__slide is-active">
+                <picture>
+                  <source srcset="assets/art/shot_01.avif" type="image/avif" />
+                  <img src="assets/art/shot_01.webp" alt="Slayer faces a scavenger on the Neon City road" width="3143" height="1758" />
+                </picture>
+              </div>
+              <div class="gp-carousel__slide">
+                <picture>
+                  <source srcset="assets/art/shot_02.avif" type="image/avif" />
+                  <img src="assets/art/shot_02.webp" alt="Combat in Neon Drift under a pink moon" width="3148" height="1759" loading="lazy" />
+                </picture>
+              </div>
+              <div class="gp-carousel__slide">
+                <picture>
+                  <source srcset="assets/art/shot_03.avif" type="image/avif" />
+                  <img src="assets/art/shot_03.webp" alt="Perfect hits and a growing combo against scavengers" width="3150" height="1762" loading="lazy" />
+                </picture>
+              </div>
+              <div class="gp-carousel__slide">
+                <picture>
+                  <source srcset="assets/art/shot_04.avif" type="image/avif" />
+                  <img src="assets/art/shot_04.webp" alt="Multi-enemy pressure on the desert highway" width="3153" height="1763" loading="lazy" />
+                </picture>
+              </div>
+              <div class="gp-carousel__slide">
+                <picture>
+                  <source srcset="assets/art/shot_05.avif" type="image/avif" />
+                  <img src="assets/art/shot_05.webp" alt="Showtime combat with Perfect timing callouts" width="3149" height="1765" loading="lazy" />
+                </picture>
+              </div>
+            </div>
+            <div class="gp-carousel__controls">
+              <button type="button" class="gp-carousel__btn" data-gp-prev aria-label="Previous screenshot">Prev</button>
+              <div class="gp-carousel__dots" data-gp-dots></div>
+              <button type="button" class="gp-carousel__btn" data-gp-next aria-label="Next screenshot">Next</button>
+            </div>
+          </div>
+
+          <ol class="pillars">
+            <li class="pillar">
+              <span class="pillar__num">01</span>
+              <div>
+                <h3>Hit the window</h3>
+                <p><strong>Perfect</strong> lands center-grid. <strong>Good</strong> still counts. <strong>Miss</strong> locks you out and resets the chain.</p>
+              </div>
+            </li>
+            <li class="pillar">
+              <span class="pillar__num">02</span>
+              <div>
+                <h3>Swap pups mid-combo</h3>
+                <p>Slayer, Fang, Bruce, Slash — each pup rewires reach, timing, and how the beat feels under your thumbs.</p>
+              </div>
+            </li>
+            <li class="pillar">
+              <span class="pillar__num">03</span>
+              <div>
+                <h3>Boxer-step the lane</h3>
+                <p>Micro-dashes forward and back. Close distance on the snare, retreat on the off-beat, dust on the asphalt.</p>
+              </div>
+            </li>
+            <li class="pillar">
+              <span class="pillar__num">04</span>
+              <div>
+                <h3>Drop Showtime</h3>
+                <p>Charge the meter on clean hits. Flip Halftime slow-mo, neon zoom, then unload before scavengers remember how to block.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="bosses" id="bosses">
+      <div class="bosses__inner">
+        <header class="section-head">
+          <p class="eyebrow">The Tour</p>
+          <h2>Eight bosses. One crown.</h2>
+          <p>
+            Every stage ends with something that hits harder than the track.
+            Survive the openers — then face the Queen.
+          </p>
+        </header>
+
+        <div class="boss-grid">
+          <article class="boss boss--pulse">
+            <div class="boss__art">
+              <picture>
+                <source srcset="assets/art/boss_00.avif" type="image/avif" />
+                <img src="assets/art/boss_00.webp" alt="Pulsejack — neon DJ boss wired into a city stage" width="1536" height="1024" loading="lazy" />
+              </picture>
+            </div>
+            <div class="boss__meta">
+              <p class="boss__stage">Boss 01 · Neon Drift</p>
+              <h3>Pulsejack</h3>
+              <p class="boss__title">Neon Conductor</p>
+              <p>Cables in the spine. EQ in the skyline. The first night owns the downbeat.</p>
+            </div>
+          </article>
+
+          <article class="boss boss--forge">
+            <div class="boss__art">
+              <picture>
+                <source srcset="assets/art/boss_01.avif" type="image/avif" />
+                <img src="assets/art/boss_01.webp" alt="Cinderhound — furnace wolf boss with flaming hammer" width="1302" height="946" loading="lazy" />
+              </picture>
+            </div>
+            <div class="boss__meta">
+              <p class="boss__stage">Boss 02 · Molten Mayhem</p>
+              <h3>Cinderhound</h3>
+              <p class="boss__title">Furnace Wolf</p>
+              <p>Smokestacks, molten core, hammer that turns asphalt into slag. Bring water. Or don’t.</p>
+            </div>
+          </article>
+
+          <article class="boss boss--static">
+            <div class="boss__art">
+              <picture>
+                <source srcset="assets/art/boss_02.avif" type="image/avif" />
+                <img src="assets/art/boss_02.webp" alt="Resonant — skeletal bellkeeper with tuning-fork staff" width="1024" height="1024" loading="lazy" />
+              </picture>
+            </div>
+            <div class="boss__meta">
+              <p class="boss__stage">Boss 03 · Cathedral of Static</p>
+              <h3>Resonant</h3>
+              <p class="boss__title">Bellkeeper</p>
+              <p>Every swing rings a wrong note. Miss the window and the bells rewrite your combo.</p>
+            </div>
+          </article>
+
+          <article class="boss boss--depth">
+            <div class="boss__art">
+              <picture>
+                <source srcset="assets/art/boss_03.avif" type="image/avif" />
+                <img src="assets/art/boss_03.webp" alt="Iron Lung — diving-bell mechanoid with claw arm" width="1024" height="1024" loading="lazy" />
+              </picture>
+            </div>
+            <div class="boss__meta">
+              <p class="boss__stage">Boss 04</p>
+              <h3>Iron Lung</h3>
+              <p class="boss__title">Pressure Diver</p>
+              <p>One glowing eye. One crushing claw. Depth charges timed to the kick drum.</p>
+            </div>
+          </article>
+
+          <article class="boss boss--grave">
+            <div class="boss__art">
+              <picture>
+                <source srcset="assets/art/boss_04.avif" type="image/avif" />
+                <img src="assets/art/boss_04.webp" alt="Tombwarden — armored knight carrying a chained tombstone" width="1144" height="897" loading="lazy" />
+              </picture>
+            </div>
+            <div class="boss__meta">
+              <p class="boss__stage">Boss 05</p>
+              <h3>Tombwarden</h3>
+              <p class="boss__title">Chained Epitaph</p>
+              <p>Stone on his back. Violet wake at his feet. Blocks Perfects like a wall of names.</p>
+            </div>
+          </article>
+
+          <article class="boss boss--carnival">
+            <div class="boss__art">
+              <picture>
+                <source srcset="assets/art/boss_05.avif" type="image/avif" />
+                <img src="assets/art/boss_05.webp" alt="Mirrorball — disco werewolf with crystal arm" width="954" height="915" loading="lazy" />
+              </picture>
+            </div>
+            <div class="boss__meta">
+              <p class="boss__stage">Boss 06 · Carnival Carnage</p>
+              <h3>Mirrorball</h3>
+              <p class="boss__title">Disco Mauler</p>
+              <p>Crystal fist, gold chain, mirror-shard helmet. The floor lights up — so do you.</p>
+            </div>
+          </article>
+
+          <article class="boss boss--void">
+            <div class="boss__art">
+              <picture>
+                <source srcset="assets/art/boss_06.avif" type="image/avif" />
+                <img src="assets/art/boss_06.webp" alt="Nullmantle — hooded rune armor boss with cyan sigils" width="1024" height="1024" loading="lazy" />
+              </picture>
+            </div>
+            <div class="boss__meta">
+              <p class="boss__stage">Boss 07 · Skyharmonia</p>
+              <h3>Nullmantle</h3>
+              <p class="boss__title">Arcane Hollow</p>
+              <p>Blue runes. Broken plate. A halo that steals the high notes out of your combo.</p>
+            </div>
+          </article>
+
+          <article class="boss boss--tide">
+            <div class="boss__art">
+              <picture>
+                <source srcset="assets/art/boss_07.avif" type="image/avif" />
+                <img src="assets/art/boss_07.webp" alt="Wavecurse — spectral pirate boss with purple orb" width="806" height="1375" loading="lazy" />
+              </picture>
+            </div>
+            <div class="boss__meta">
+              <p class="boss__stage">Boss 08 · Barkharbor Brawl</p>
+              <h3>Wavecurse</h3>
+              <p class="boss__title">Spectral Corsair</p>
+              <p>Peg leg, glowing orb, chains that swing off the snare. Saltwater ghosts keep the tempo.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="finale" id="queen-rakka">
+        <div class="finale__inner">
+          <div class="finale__copy">
+            <p class="eyebrow">Final Boss</p>
+            <h2 class="finale__name">Queen Rakka</h2>
+            <p class="finale__role">Realm of the Crown</p>
+            <p>
+              Mic raised. Lightning down. A dead band behind her and a grin that says
+              the encore is personal. If the pups still have a Perfect left — this is where it spends.
+            </p>
+          </div>
+          <figure class="finale__art">
+            <picture>
+              <source srcset="assets/art/queen_rakka.avif" type="image/avif" />
+              <img
+                src="assets/art/queen_rakka.webp"
+                alt="Queen Rakka — final boss standing on a rock with microphone under lightning"
+                width="1024"
+                height="1536"
+                loading="lazy"
+              />
+            </picture>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="box" id="box">
+      <div class="box__inner">
+        <header class="section-head section-head--center">
+          <h2>The box.</h2>
+          <p>Full packshot. Front, spine, back — Neon Drift is only the first stamp on the map.</p>
+        </header>
+        <figure class="box__shot">
+          <picture>
+            <source srcset="assets/art/Apocalypups_RhythmAndRage_CoverOnePager.avif" type="image/avif" />
+            <img
+              src="assets/art/Apocalypups_RhythmAndRage_CoverOnePager.webp"
+              alt="Full Apocalypups Rhythm & Rage packaging — front, spine, and back cover"
+              width="2074"
+              height="1595"
+              loading="lazy"
+            />
+          </picture>
+        </figure>
       </div>
     </section>
 
     <section class="wish" id="wish">
       <div class="wish__inner">
-        <h2>Neon Drift is in prototype.</h2>
-        <p>Build nights. Checkpoint branches. Scavenger AI that still gets too cocky. Join early and shape the fight.</p>
+        <h2>Be first when Neon Drift goes loud.</h2>
+        <p>Prototype nights. Band swaps. Scavenger pressure. Drop your mail and stay on the beat.</p>
         <form class="wish__form" id="wish-form">
           <label class="sr-only" for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@night.city" required autocomplete="email" />
+          <input id="email" name="email" type="email" placeholder="you@neon.city" required autocomplete="email" />
           <button class="btn btn--primary" type="submit">Notify me</button>
         </form>
         <p class="wish__note" id="wish-note" hidden>You’re on the list. Keep an ear on the BPM.</p>
@@ -200,8 +613,8 @@
 
   <footer class="footer">
     <div class="footer__brand">APOCALYPUPS</div>
-    <p>Neon Drift · Rhythm beat-em-up prototype</p>
-    <p class="footer__meta">Built for the fight. Tuned for the beat.</p>
+    <p>Rhythm &amp; Rage · Neon Drift prototype</p>
+    <p class="footer__meta">Voted GOTY by at least 1 very biased developer</p>
   </footer>
 
   <script src="js/main.js"></script>
