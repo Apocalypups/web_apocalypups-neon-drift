@@ -571,15 +571,16 @@ footer {
 }
 
 .hero__content {
-  /* static so .hero__mega can position against .hero on desktop */
+  /* static + no transform: .hero__mega absolute insets against .hero */
   max-width: 36rem;
   padding: 7rem clamp(1.25rem, 4vw, 3rem) 5.5rem;
-  animation: content-in 0.9s var(--ease-out) 0.15s both;
 }
 
 .hero__content > :not(.hero__mega) {
   position: relative;
   z-index: 4;
+  /* animate children — transform on .hero__content would trap mega */
+  animation: content-in 0.9s var(--ease-out) 0.15s both;
 }
 
 @keyframes content-in {
@@ -885,8 +886,11 @@ footer {
     z-index: 2;
     padding: 1rem 1.25rem 1.75rem;
     max-width: none;
-    animation: none;
     background: #050208;
+  }
+
+  .hero__content > :not(.hero__mega) {
+    animation: none;
   }
 
   .hero__mega {
