@@ -117,7 +117,10 @@ footer {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem clamp(1rem, 4vw, 2.5rem);
+  padding:
+    calc(1rem + env(safe-area-inset-top, 0px))
+    clamp(1rem, 4vw, 2.5rem)
+    1rem;
   background: linear-gradient(to bottom, rgba(5, 2, 8, 0.92), transparent);
 }
 
@@ -374,7 +377,7 @@ footer {
   }
 }
 
-/* full-bleed wordmark */
+/* full-bleed wordmark — absolute to .hero (content is static) */
 .hero__mega {
   position: absolute;
   inset: 0;
@@ -555,11 +558,15 @@ footer {
 }
 
 .hero__content {
-  position: relative;
-  z-index: 4;
+  /* static so .hero__mega can position against .hero on desktop */
   max-width: 36rem;
   padding: 7rem clamp(1.25rem, 4vw, 3rem) 5.5rem;
   animation: content-in 0.9s var(--ease-out) 0.15s both;
+}
+
+.hero__content > :not(.hero__mega) {
+  position: relative;
+  z-index: 4;
 }
 
 @keyframes content-in {
@@ -766,19 +773,128 @@ footer {
   }
 }
 
-@media (max-width: 560px) {
-  .hero__content {
-    padding-top: 6rem;
+@media (max-width: 700px) {
+  .hero {
+    min-height: 100svh;
+    min-height: 100dvh;
+  }
+
+  /* Title joins the content stack — no more floating overlap */
+  .hero__mega {
+    position: relative;
+    inset: auto;
+    z-index: 4;
+    display: block;
+    width: 100%;
+    margin: 0.15rem 0 0;
+    padding: 0;
   }
 
   .hero__mega-text {
-    font-size: clamp(2.4rem, 12.5vw, 4rem);
-    flex-wrap: nowrap;
+    font-size: clamp(2.7rem, 13.5vw, 4.1rem);
+    letter-spacing: -0.03em;
+    line-height: 0.82;
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .hero__flash {
+    inset: -20% -8%;
+  }
+
+  .hero__content {
+    padding:
+      max(5.25rem, 34svh)
+      1.25rem
+      calc(3.65rem + env(safe-area-inset-bottom, 0px));
+    max-width: none;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.55rem;
+  }
+
+  .eyebrow--torn {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    padding: 0.32rem 0.65rem;
+  }
+
+  .brand__sub {
+    margin-top: 0.4rem;
+    padding: 0.18rem 0.5rem 0.12rem;
+    font-size: 0.92rem;
+    letter-spacing: 0.14em;
+    transform: rotate(-1deg);
+  }
+
+  .hero__lede {
+    margin: 1rem 0 1.2rem;
+    font-size: 1.02rem;
+    line-height: 1.5;
+  }
+
+  .hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+
+  .hero__cta .btn {
+    width: 100%;
+  }
+
+  /* Even borders — jagged clip reads as a thick bottom edge on narrow screens */
+  .btn--jagged {
+    clip-path: none;
+  }
+
+  .hero__footer {
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: calc(0.7rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .hero__dot {
+    width: 1.65rem;
   }
 
   .hero__scrim {
     background:
-      linear-gradient(180deg, rgba(5, 2, 8, 0.4) 0%, rgba(5, 2, 8, 0.15) 35%, rgba(5, 2, 8, 0.7) 70%, rgba(5, 2, 8, 0.96) 100%);
+      linear-gradient(
+        180deg,
+        rgba(5, 2, 8, 0.42) 0%,
+        rgba(5, 2, 8, 0.12) 32%,
+        rgba(5, 2, 8, 0.55) 58%,
+        rgba(5, 2, 8, 0.94) 78%,
+        rgba(5, 2, 8, 0.98) 100%
+      );
+  }
+
+  /* Keep judgment pops in the art zone, clear of the copy stack */
+  .hero__judgments {
+    clip-path: inset(0 0 42% 0);
+  }
+
+  .judge {
+    font-size: clamp(1.15rem, 5.5vw, 1.75rem);
+  }
+}
+
+@media (max-width: 380px) {
+  .hero__mega-text {
+    font-size: clamp(2.35rem, 12.2vw, 3.2rem);
+  }
+
+  .brand__sub {
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+  }
+
+  .hero__content {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
