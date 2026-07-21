@@ -4,6 +4,14 @@ Marketing site for **Apocalypups: Rhythm & Rage**, with **Neon Drift** as the op
 
 **Live:** https://apocalypups-neon-drift.shpdigital.workers.dev
 
+Merging to `main` does **not** update Live by itself. Deploy is required:
+
+```bash
+npm run deploy
+```
+
+Or push to `main` after adding GitHub secrets `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` (workflow: `.github/workflows/deploy.yml`).
+
 ## Art
 
 All key art lives in `assets/art/`:
