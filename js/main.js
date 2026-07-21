@@ -87,8 +87,11 @@
   }
 
   // Letter blackout / power-cut glitches on mega title
+  const mega = document.querySelector(".hero__mega");
   const letters = Array.from(document.querySelectorAll(".mega-letter"));
-  if (letters.length && !reduced) {
+
+  const startLetterGlitches = () => {
+    if (!letters.length || reduced) return;
     const blackout = () => {
       const roll = Math.random();
       const count = roll > 0.88 ? 3 : roll > 0.55 ? 2 : 1;
@@ -101,13 +104,27 @@
           window.setTimeout(() => el.classList.remove("is-glitching"), 320);
         }, Math.random() * 220);
       });
-      // mostly frequent, occasional longer pause
       const gap = Math.random() > 0.82
         ? 1600 + Math.random() * 1400
         : 450 + Math.random() * 900;
       window.setTimeout(blackout, gap);
     };
-    window.setTimeout(blackout, 400 + Math.random() * 600);
+    window.setTimeout(blackout, 500 + Math.random() * 700);
+  };
+
+  if (mega) {
+    if (reduced) {
+      mega.classList.add("is-ready");
+    } else {
+      window.requestAnimationFrame(() => {
+        mega.classList.add("is-striking");
+        window.setTimeout(() => {
+          mega.classList.remove("is-striking");
+          mega.classList.add("is-ready");
+          startLetterGlitches();
+        }, 720);
+      });
+    }
   }
 
   // Gameplay screenshot carousel

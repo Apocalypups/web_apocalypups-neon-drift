@@ -386,8 +386,35 @@ footer {
   padding: 0 1vw;
 }
 
+.hero__flash {
+  position: absolute;
+  inset: -10%;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(255, 255, 255, 0.95) 0%, rgba(39, 240, 255, 0.45) 18%, rgba(255, 46, 203, 0.25) 40%, transparent 68%),
+    linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.55) 49%, transparent 58%);
+  mix-blend-mode: screen;
+}
+
+.hero__mega.is-striking .hero__flash {
+  animation: bolt-flash 0.55s steps(2, end) both;
+}
+
+@keyframes bolt-flash {
+  0% { opacity: 0; transform: scale(0.96); }
+  8% { opacity: 1; transform: scale(1.02); }
+  16% { opacity: 0.12; }
+  28% { opacity: 0.95; transform: scale(1.04); }
+  42% { opacity: 0.2; }
+  55% { opacity: 0.55; }
+  100% { opacity: 0; transform: scale(1); }
+}
+
 .hero__mega-text {
   position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -400,6 +427,7 @@ footer {
   text-align: center;
   white-space: nowrap;
   color: var(--paper);
+  opacity: 0;
   transform: none;
   text-shadow:
     4px 0 0 rgba(39, 240, 255, 0.55),
@@ -407,6 +435,59 @@ footer {
     0 0 24px rgba(255, 46, 203, 0.4),
     0 0 60px rgba(196, 18, 47, 0.45),
     0 18px 40px rgba(0, 0, 0, 0.55);
+}
+
+.hero__mega.is-striking .hero__mega-text {
+  animation: mega-strike-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero__mega.is-ready .hero__mega-text {
+  opacity: 1;
+}
+
+@keyframes mega-strike-in {
+  0% {
+    opacity: 0;
+    filter: brightness(8) contrast(1.4);
+    text-shadow: 0 0 60px #fff, 0 0 120px rgba(39, 240, 255, 0.9);
+  }
+  12% {
+    opacity: 1;
+    filter: brightness(5);
+    text-shadow:
+      0 0 40px #fff,
+      6px 0 0 rgba(39, 240, 255, 0.9),
+      -6px 0 0 rgba(255, 46, 203, 0.9);
+  }
+  22% {
+    opacity: 0.15;
+    filter: brightness(1);
+  }
+  34% {
+    opacity: 1;
+    filter: brightness(3.2);
+    text-shadow:
+      0 0 50px #fff,
+      4px 0 0 rgba(39, 240, 255, 0.8),
+      -4px 0 0 rgba(255, 46, 203, 0.8);
+  }
+  48% {
+    opacity: 0.35;
+  }
+  58% {
+    opacity: 1;
+    filter: brightness(1.6);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+    text-shadow:
+      4px 0 0 rgba(39, 240, 255, 0.55),
+      -4px 0 0 rgba(255, 46, 203, 0.55),
+      0 0 24px rgba(255, 46, 203, 0.4),
+      0 0 60px rgba(196, 18, 47, 0.45),
+      0 18px 40px rgba(0, 0, 0, 0.55);
+  }
 }
 
 .mega-letter {
