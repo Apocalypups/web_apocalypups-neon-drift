@@ -112,8 +112,27 @@
   }
 
   // Letter blackout / power-cut glitches on mega title
+  const hero = document.querySelector(".hero");
   const mega = document.querySelector(".hero__mega");
   const letters = Array.from(document.querySelectorAll(".mega-letter"));
+  const firstHeroImg = document.querySelector(".hero__slide.is-active img");
+
+  // Freeze hero height on mobile so Safari URL-bar show/hide doesn't
+  // reflow end-aligned title away from the art while scrolling.
+  const lockHeroHeight = () => {
+    if (!hero || window.matchMedia("(min-width: 701px)").matches) {
+      document.documentElement.style.removeProperty("--hero-height");
+      return;
+    }
+    document.documentElement.style.setProperty(
+      "--hero-height",
+      `${window.innerHeight}px`
+    );
+  };
+  lockHeroHeight();
+  window.addEventListener("orientationchange", () => {
+    window.setTimeout(lockHeroHeight, 350);
+  });
 
   const startLetterGlitches = () => {
     if (!letters.length || reduced) return;
@@ -137,19 +156,47 @@
     window.setTimeout(blackout, 500 + Math.random() * 700);
   };
 
-  if (mega) {
-    if (reduced) {
-      mega.classList.add("is-ready");
-    } else {
-      window.requestAnimationFrame(() => {
-        mega.classList.add("is-striking");
-        window.setTimeout(() => {
-          mega.classList.remove("is-striking");
-          mega.classList.add("is-ready");
-          startLetterGlitches();
-        }, 720);
-      });
+  const runStrike = () => {
+    if (!hero || hero.classList.contains("is-ready") || hero.classList.contains("is-striking")) {
+      return;
     }
+    if (reduced) {
+      hero.classList.add("is-ready");
+      return;
+    }
+    window.requestAnimationFrame(() => {
+      hero.classList.add("is-striking");
+      window.setTimeout(() => {
+        hero.classList.remove("is-striking");
+        hero.classList.add("is-ready");
+        startLetterGlitches();
+      }, 720);
+    });
+  };
+
+  if (hero && mega) {
+    const whenArtReady = (fn) => {
+      if (!firstHeroImg) {
+        fn();
+        return;
+      }
+      if (firstHeroImg.complete && firstHeroImg.naturalWidth > 0) {
+        fn();
+        return;
+      }
+      let done = false;
+      const finish = () => {
+        if (done) return;
+        done = true;
+        fn();
+      };
+      firstHeroImg.addEventListener("load", finish, { once: true });
+      firstHeroImg.addEventListener("error", finish, { once: true });
+      // Don't leave the title blank forever on slow networks
+      window.setTimeout(finish, 900);
+    };
+
+    whenArtReady(runStrike);
   }
 
   // Gameplay screenshot carousel
