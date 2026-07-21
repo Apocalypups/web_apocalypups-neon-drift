@@ -807,8 +807,6 @@ footer {
     width: 100%;
     flex: 0 0 auto;
     z-index: 1;
-    /* Height comes from in-flow .hero__bg — not from empty absolute box */
-    aspect-ratio: auto;
     max-height: none;
   }
 
@@ -816,8 +814,15 @@ footer {
     position: relative;
     inset: auto;
     width: 100%;
-    aspect-ratio: 16 / 10;
     overflow: hidden;
+  }
+
+  /* In-flow strut so the art band keeps height (absolute slides alone won't) */
+  .hero__bg::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-bottom: 62.5%; /* 16:10 — matches gameplay shots */
   }
 
   .hero__scrim,
@@ -825,7 +830,6 @@ footer {
   .hero__tear,
   .hero__flash,
   .hero__judgments {
-    /* Cover the art band only (stage height = bg height) */
     position: absolute;
     inset: 0;
   }
