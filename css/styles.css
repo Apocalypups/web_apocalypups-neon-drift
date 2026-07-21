@@ -784,7 +784,18 @@ footer {
   }
 
   .hero__slide img {
-    object-position: center 28%;
+    /* Crop tighter so characters sit closer to the title stack */
+    object-position: center 52%;
+    transform: scale(1.28);
+  }
+
+  .hero__slide.is-active img {
+    animation-name: hero-ken-mobile;
+  }
+
+  @keyframes hero-ken-mobile {
+    from { transform: scale(1.28) translate(0, 0) rotate(0deg); }
+    to { transform: scale(1.36) translate(-2%, -1%) rotate(-0.35deg); }
   }
 
   /* Title joins the content stack — no more floating overlap */
@@ -863,22 +874,23 @@ footer {
     width: 1.65rem;
   }
 
-  /* Keep gameplay art readable into the copy zone — less “black slab” */
+  /* Art stays visible into the copy zone — kill the empty black band */
   .hero__scrim {
     background:
       linear-gradient(
         180deg,
-        rgba(5, 2, 8, 0.28) 0%,
-        rgba(5, 2, 8, 0.05) 30%,
-        rgba(5, 2, 8, 0.28) 55%,
-        rgba(5, 2, 8, 0.72) 78%,
+        rgba(5, 2, 8, 0.22) 0%,
+        rgba(5, 2, 8, 0.04) 28%,
+        rgba(5, 2, 8, 0.12) 52%,
+        rgba(5, 2, 8, 0.48) 72%,
+        rgba(5, 2, 8, 0.82) 88%,
         rgba(5, 2, 8, 0.94) 100%
       );
   }
 
   /* Judgments stay in the art band only */
   .hero__judgments {
-    clip-path: inset(0 0 52% 0);
+    clip-path: inset(0 0 48% 0);
   }
 
   .judge {
