@@ -255,6 +255,12 @@ footer {
   opacity: 1;
 }
 
+.hero__slide picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .hero__slide img {
   width: 100%;
   height: 100%;
@@ -781,7 +787,10 @@ footer {
 }
 
 @media (max-width: 700px) {
-  /* Stacked: art band → dots under image → title/copy (no full-vh black void) */
+  /*
+    Clean stack: sized art band (width-based aspect, no svh) →
+    dots on the shot → title/copy. Avoids empty black + Safari jump.
+  */
   .hero {
     display: flex;
     flex-direction: column;
@@ -796,15 +805,34 @@ footer {
     position: relative;
     inset: auto;
     width: 100%;
-    aspect-ratio: 4 / 5;
-    max-height: 58svh;
     flex: 0 0 auto;
     z-index: 1;
+    /* Height comes from in-flow .hero__bg — not from empty absolute box */
+    aspect-ratio: auto;
+    max-height: none;
+  }
+
+  .hero__bg {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  .hero__scrim,
+  .hero__grain,
+  .hero__tear,
+  .hero__flash,
+  .hero__judgments {
+    /* Cover the art band only (stage height = bg height) */
+    position: absolute;
+    inset: 0;
   }
 
   .hero__slide img {
-    object-position: center 42%;
-    transform: scale(1.18);
+    object-position: center 38%;
+    transform: scale(1.12);
   }
 
   .hero__slide.is-active img {
@@ -812,47 +840,49 @@ footer {
   }
 
   @keyframes hero-ken-mobile {
-    from { transform: scale(1.18) translate(0, 0) rotate(0deg); }
-    to { transform: scale(1.26) translate(-2%, -1%) rotate(-0.35deg); }
+    from { transform: scale(1.12) translate(0, 0) rotate(0deg); }
+    to { transform: scale(1.2) translate(-1.5%, -0.8%) rotate(-0.3deg); }
   }
 
   .hero__scrim {
     background:
       linear-gradient(
         180deg,
-        rgba(5, 2, 8, 0.35) 0%,
-        rgba(5, 2, 8, 0.08) 35%,
-        rgba(5, 2, 8, 0.2) 62%,
-        rgba(5, 2, 8, 0.55) 100%
+        rgba(5, 2, 8, 0.4) 0%,
+        rgba(5, 2, 8, 0.08) 40%,
+        rgba(5, 2, 8, 0.35) 78%,
+        rgba(5, 2, 8, 0.7) 100%
       );
   }
 
   .hero__judgments {
     clip-path: none;
+    overflow: hidden;
   }
 
   .judge {
-    font-size: clamp(1.15rem, 5.5vw, 1.75rem);
+    font-size: clamp(1.05rem, 5vw, 1.55rem);
   }
 
-  /* Dots sit on the art, directly under the gameplay shot */
+  /* Dots on the bottom edge of the art */
   .hero__footer {
-    left: 1.25rem;
-    right: 1.25rem;
-    bottom: 0.85rem;
+    left: 1.15rem;
+    right: 1.15rem;
+    bottom: 0.7rem;
   }
 
   .hero__dot {
-    width: 1.65rem;
+    width: 1.55rem;
   }
 
-  /* Title stack flows right under the stage */
+  /* Title sits immediately under the shot — one continuous block */
   .hero__content {
     position: relative;
     z-index: 2;
-    padding: 1.15rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    padding: 1rem 1.25rem 1.75rem;
     max-width: none;
     animation: none;
+    background: #050208;
   }
 
   .hero__mega {
