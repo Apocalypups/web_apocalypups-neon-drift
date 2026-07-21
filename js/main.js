@@ -117,23 +117,6 @@
   const letters = Array.from(document.querySelectorAll(".mega-letter"));
   const firstHeroImg = document.querySelector(".hero__slide.is-active img");
 
-  // Freeze hero height on mobile so Safari URL-bar show/hide doesn't
-  // reflow end-aligned title away from the art while scrolling.
-  const lockHeroHeight = () => {
-    if (!hero || window.matchMedia("(min-width: 701px)").matches) {
-      document.documentElement.style.removeProperty("--hero-height");
-      return;
-    }
-    document.documentElement.style.setProperty(
-      "--hero-height",
-      `${window.innerHeight}px`
-    );
-  };
-  lockHeroHeight();
-  window.addEventListener("orientationchange", () => {
-    window.setTimeout(lockHeroHeight, 350);
-  });
-
   const startLetterGlitches = () => {
     if (!letters.length || reduced) return;
     const blackout = () => {
