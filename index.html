@@ -8,8 +8,13 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:wght@400;500;600;700&family=Oxanium:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:wght@400;500;600;700&family=Oxanium:wght@500;700;800&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:wght@400;500;600;700&family=Oxanium:wght@500;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:wght@400;500;600;700&family=Oxanium:wght@500;700;800&display=swap" rel="stylesheet" />
+  </noscript>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preload" as="image" href="assets/art/shot_01-1280.avif" type="image/avif" imagesrcset="assets/art/shot_01-800.avif 800w, assets/art/shot_01-1280.avif 1280w" imagesizes="100vw" />
 </head>
 <body>
   <canvas id="fx-canvas" aria-hidden="true"></canvas>
@@ -17,8 +22,8 @@
   <div class="vignette" aria-hidden="true"></div>
 
   <header class="topbar">
-    <a class="logo-mark" href="#top" aria-label="Apocalypups home">
-      <span class="logo-mark__glyph">A</span>
+    <a class="logo-mark" href="#top">
+      <span class="logo-mark__glyph" aria-hidden="true">A</span>
       <span class="logo-mark__text">Apocalypups</span>
     </a>
     <nav class="topnav" aria-label="Primary">
@@ -34,34 +39,90 @@
   <main id="top">
     <section class="hero">
       <div class="hero__bg" aria-hidden="true">
-        <div class="hero__slide is-active">
+        <div class="hero__slide is-active" data-loaded="1">
           <picture>
-            <source srcset="assets/art/shot_01.avif" type="image/avif" />
-            <img src="assets/art/shot_01.webp" alt="" width="3143" height="1758" fetchpriority="high" />
+            <source
+              type="image/avif"
+              srcset="assets/art/shot_01-800.avif 800w, assets/art/shot_01-1280.avif 1280w"
+              sizes="100vw"
+            />
+            <img
+              src="assets/art/shot_01-1280.webp"
+              srcset="assets/art/shot_01-800.webp 800w, assets/art/shot_01-1280.webp 1280w"
+              sizes="100vw"
+              alt=""
+              width="1280"
+              height="716"
+              fetchpriority="high"
+            />
           </picture>
         </div>
         <div class="hero__slide">
           <picture>
-            <source srcset="assets/art/shot_03.avif" type="image/avif" />
-            <img src="assets/art/shot_03.webp" alt="" width="3150" height="1762" loading="lazy" />
+            <source
+              type="image/avif"
+              data-srcset="assets/art/shot_03-800.avif 800w, assets/art/shot_03-1280.avif 1280w"
+              sizes="100vw"
+            />
+            <img
+              data-src="assets/art/shot_03-1280.webp"
+              data-srcset="assets/art/shot_03-800.webp 800w, assets/art/shot_03-1280.webp 1280w"
+              sizes="100vw"
+              alt=""
+              width="1280"
+              height="716"
+            />
           </picture>
         </div>
         <div class="hero__slide">
           <picture>
-            <source srcset="assets/art/shot_05.avif" type="image/avif" />
-            <img src="assets/art/shot_05.webp" alt="" width="3149" height="1765" loading="lazy" />
+            <source
+              type="image/avif"
+              data-srcset="assets/art/shot_05-800.avif 800w, assets/art/shot_05-1280.avif 1280w"
+              sizes="100vw"
+            />
+            <img
+              data-src="assets/art/shot_05-1280.webp"
+              data-srcset="assets/art/shot_05-800.webp 800w, assets/art/shot_05-1280.webp 1280w"
+              sizes="100vw"
+              alt=""
+              width="1280"
+              height="716"
+            />
           </picture>
         </div>
         <div class="hero__slide">
           <picture>
-            <source srcset="assets/art/shot_02.avif" type="image/avif" />
-            <img src="assets/art/shot_02.webp" alt="" width="3148" height="1759" loading="lazy" />
+            <source
+              type="image/avif"
+              data-srcset="assets/art/shot_02-800.avif 800w, assets/art/shot_02-1280.avif 1280w"
+              sizes="100vw"
+            />
+            <img
+              data-src="assets/art/shot_02-1280.webp"
+              data-srcset="assets/art/shot_02-800.webp 800w, assets/art/shot_02-1280.webp 1280w"
+              sizes="100vw"
+              alt=""
+              width="1280"
+              height="716"
+            />
           </picture>
         </div>
         <div class="hero__slide">
           <picture>
-            <source srcset="assets/art/shot_04.avif" type="image/avif" />
-            <img src="assets/art/shot_04.webp" alt="" width="3153" height="1763" loading="lazy" />
+            <source
+              type="image/avif"
+              data-srcset="assets/art/shot_04-800.avif 800w, assets/art/shot_04-1280.avif 1280w"
+              sizes="100vw"
+            />
+            <img
+              data-src="assets/art/shot_04-1280.webp"
+              data-srcset="assets/art/shot_04-800.webp 800w, assets/art/shot_04-1280.webp 1280w"
+              sizes="100vw"
+              alt=""
+              width="1280"
+              height="716"
+            />
           </picture>
         </div>
       </div>
@@ -101,7 +162,7 @@
       </div>
 
       <div class="hero__footer">
-        <div class="hero__dots" role="tablist" aria-label="Hero screenshots"></div>
+        <div class="hero__dots" role="group" aria-label="Hero screenshots"></div>
         <div class="hero__bpm" aria-hidden="true">
           <span class="hero__bpm-bar"><i></i><i></i><i></i><i></i></span>
           <span>128 BPM</span>
@@ -145,8 +206,8 @@
           <article class="member member--slayer">
             <div class="member__art">
               <picture>
-                <source srcset="assets/art/slayer.avif" type="image/avif" />
-                <img src="assets/art/slayer.webp" alt="Slayer — lead dog with chain mic" width="909" height="1432" loading="lazy" />
+                <source srcset="assets/art/slayer-480.avif" type="image/avif" />
+                <img src="assets/art/slayer-480.webp" alt="Slayer — lead dog with chain mic" width="480" height="756" loading="lazy" />
               </picture>
             </div>
             <div class="member__meta">
@@ -159,8 +220,8 @@
           <article class="member member--fang">
             <div class="member__art">
               <picture>
-                <source srcset="assets/art/fang.avif" type="image/avif" />
-                <img src="assets/art/fang.webp" alt="Fang — stickstorm specialist" width="894" height="1395" loading="lazy" />
+                <source srcset="assets/art/fang-480.avif" type="image/avif" />
+                <img src="assets/art/fang-480.webp" alt="Fang — stickstorm specialist" width="480" height="793" loading="lazy" />
               </picture>
             </div>
             <div class="member__meta">
@@ -173,8 +234,8 @@
           <article class="member member--bruce">
             <div class="member__art">
               <picture>
-                <source srcset="assets/art/bruce.avif" type="image/avif" />
-                <img src="assets/art/bruce.webp" alt="Bruce — bass powerhouse" width="879" height="1313" loading="lazy" />
+                <source srcset="assets/art/bruce-480.avif" type="image/avif" />
+                <img src="assets/art/bruce-480.webp" alt="Bruce — bass powerhouse" width="480" height="717" loading="lazy" />
               </picture>
             </div>
             <div class="member__meta">
@@ -187,8 +248,8 @@
           <article class="member member--slash">
             <div class="member__art">
               <picture>
-                <source srcset="assets/art/slash.avif" type="image/avif" />
-                <img src="assets/art/slash.webp" alt="Slash — guitar chaos" width="865" height="1386" loading="lazy" />
+                <source srcset="assets/art/slash-480.avif" type="image/avif" />
+                <img src="assets/art/slash-480.webp" alt="Slash — guitar chaos" width="480" height="769" loading="lazy" />
               </picture>
             </div>
             <div class="member__meta">
@@ -345,32 +406,91 @@
             <div class="gp-carousel__viewport">
               <div class="gp-carousel__slide is-active">
                 <picture>
-                  <source srcset="assets/art/shot_01.avif" type="image/avif" />
-                  <img src="assets/art/shot_01.webp" alt="Slayer faces a scavenger on the Neon City road" width="3143" height="1758" />
+                  <source
+                    type="image/avif"
+                    srcset="assets/art/shot_01-800.avif 800w, assets/art/shot_01-1280.avif 1280w"
+                    sizes="(max-width: 900px) 100vw, 640px"
+                  />
+                  <img
+                    src="assets/art/shot_01-1280.webp"
+                    srcset="assets/art/shot_01-800.webp 800w, assets/art/shot_01-1280.webp 1280w"
+                    sizes="(max-width: 900px) 100vw, 640px"
+                    alt="Slayer faces a scavenger on the Neon City road"
+                    width="1280"
+                    height="716"
+                  />
                 </picture>
               </div>
               <div class="gp-carousel__slide">
                 <picture>
-                  <source srcset="assets/art/shot_02.avif" type="image/avif" />
-                  <img src="assets/art/shot_02.webp" alt="Combat in Neon Drift under a pink moon" width="3148" height="1759" loading="lazy" />
+                  <source
+                    type="image/avif"
+                    srcset="assets/art/shot_02-800.avif 800w, assets/art/shot_02-1280.avif 1280w"
+                    sizes="(max-width: 900px) 100vw, 640px"
+                  />
+                  <img
+                    src="assets/art/shot_02-1280.webp"
+                    srcset="assets/art/shot_02-800.webp 800w, assets/art/shot_02-1280.webp 1280w"
+                    sizes="(max-width: 900px) 100vw, 640px"
+                    alt="Combat in Neon Drift under a pink moon"
+                    width="1280"
+                    height="716"
+                    loading="lazy"
+                  />
                 </picture>
               </div>
               <div class="gp-carousel__slide">
                 <picture>
-                  <source srcset="assets/art/shot_03.avif" type="image/avif" />
-                  <img src="assets/art/shot_03.webp" alt="Perfect hits and a growing combo against scavengers" width="3150" height="1762" loading="lazy" />
+                  <source
+                    type="image/avif"
+                    srcset="assets/art/shot_03-800.avif 800w, assets/art/shot_03-1280.avif 1280w"
+                    sizes="(max-width: 900px) 100vw, 640px"
+                  />
+                  <img
+                    src="assets/art/shot_03-1280.webp"
+                    srcset="assets/art/shot_03-800.webp 800w, assets/art/shot_03-1280.webp 1280w"
+                    sizes="(max-width: 900px) 100vw, 640px"
+                    alt="Perfect hits and a growing combo against scavengers"
+                    width="1280"
+                    height="716"
+                    loading="lazy"
+                  />
                 </picture>
               </div>
               <div class="gp-carousel__slide">
                 <picture>
-                  <source srcset="assets/art/shot_04.avif" type="image/avif" />
-                  <img src="assets/art/shot_04.webp" alt="Multi-enemy pressure on the desert highway" width="3153" height="1763" loading="lazy" />
+                  <source
+                    type="image/avif"
+                    srcset="assets/art/shot_04-800.avif 800w, assets/art/shot_04-1280.avif 1280w"
+                    sizes="(max-width: 900px) 100vw, 640px"
+                  />
+                  <img
+                    src="assets/art/shot_04-1280.webp"
+                    srcset="assets/art/shot_04-800.webp 800w, assets/art/shot_04-1280.webp 1280w"
+                    sizes="(max-width: 900px) 100vw, 640px"
+                    alt="Multi-enemy pressure on the desert highway"
+                    width="1280"
+                    height="716"
+                    loading="lazy"
+                  />
                 </picture>
               </div>
               <div class="gp-carousel__slide">
                 <picture>
-                  <source srcset="assets/art/shot_05.avif" type="image/avif" />
-                  <img src="assets/art/shot_05.webp" alt="Showtime combat with Perfect timing callouts" width="3149" height="1765" loading="lazy" />
+                  <source
+                    type="image/avif"
+                    srcset="assets/art/shot_05-800.avif 800w, assets/art/shot_05-1280.avif 1280w"
+                    sizes="(max-width: 900px) 100vw, 640px"
+                  />
+                  <img
+                    src="assets/art/shot_05-1280.webp"
+                    srcset="assets/art/shot_05-800.webp 800w, assets/art/shot_05-1280.webp 1280w"
+                    sizes="(max-width: 900px) 100vw, 640px"
+                    alt="Showtime combat with Perfect timing callouts"
+                    width="1280"
+                    height="716"
+                    loading="lazy"
+                  />
                 </picture>
               </div>
             </div>

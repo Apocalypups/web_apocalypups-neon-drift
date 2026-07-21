@@ -56,11 +56,31 @@
   let index = 0;
   let timer = null;
 
+  const loadSlide = (slide) => {
+    if (!slide || slide.dataset.loaded === "1") return;
+    const source = slide.querySelector("source");
+    const img = slide.querySelector("img");
+    if (source?.dataset.srcset) {
+      source.srcset = source.dataset.srcset;
+      delete source.dataset.srcset;
+    }
+    if (img?.dataset.src) {
+      if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+      img.src = img.dataset.src;
+      delete img.dataset.src;
+      delete img.dataset.srcset;
+    }
+    slide.dataset.loaded = "1";
+  };
+
   const goTo = (next) => {
     if (!slides.length) return;
     slides[index]?.classList.remove("is-active");
     dotsRoot?.querySelectorAll(".hero__dot")[index]?.classList.remove("is-active");
     index = (next + slides.length) % slides.length;
+    loadSlide(slides[index]);
+    // Prefetch the following slide so the next beat feels instant
+    loadSlide(slides[(index + 1) % slides.length]);
     slides[index].classList.add("is-active");
     dotsRoot?.querySelectorAll(".hero__dot")[index]?.classList.add("is-active");
   };
@@ -80,6 +100,11 @@
       });
       dotsRoot.appendChild(btn);
     });
+  }
+
+  // Warm the second slide after first paint
+  if (slides[1]) {
+    window.requestAnimationFrame(() => loadSlide(slides[1]));
   }
 
   if (slides.length > 1 && !reduced) {
