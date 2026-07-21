@@ -5,6 +5,7 @@ node_modules/
 *.log
 dist/
 .cache/
+.wrangler/
 assets/art/_preview/
 
 # large source exports

@@ -1,0 +1,15 @@
+.git
+.gitignore
+.assetsignore
+node_modules
+package.json
+package-lock.json
+wrangler.jsonc
+README.md
+.DS_Store
+.wrangler
+assets/art/_preview
+assets/art/*.png
+assets/art/*.PNG
+assets/art/*.jpeg
+assets/art/*.JPEG

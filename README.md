@@ -2,6 +2,8 @@
 
 Marketing site for **Apocalypups: Rhythm & Rage**, with **Neon Drift** as the opening world.
 
+**Live:** https://apocalypups-neon-drift.shpdigital.workers.dev
+
 ## Art
 
 All key art lives in `assets/art/`:
@@ -19,9 +21,18 @@ Prefer `.avif` with `.webp` fallback via `<picture>`.
 ## Run
 
 ```bash
-python3 -m http.server 8765
-# → http://localhost:8765
+npm install
+npm run dev
+# or: python3 -m http.server 8765 → http://localhost:8765
 ```
+
+## Deploy (Cloudflare Workers)
+
+```bash
+npm run deploy
+```
+
+Static assets are served via Workers (`wrangler.jsonc` → `assets.directory`).
 
 ## Wishlist
 
